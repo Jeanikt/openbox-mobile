@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "896804580517",
+    "project_id": "openboxlight",
+    "storage_bucket": "openboxlight.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:896804580517:android:31983f23bb2f00eb34f14c",
+        "android_client_info": {
+          "package_name": "com.openboxlight.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzqEGNHJSztuPCbKzxChWAMJAAKT9OlZs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
