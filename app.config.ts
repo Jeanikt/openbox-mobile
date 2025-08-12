@@ -1,6 +1,6 @@
 import { ExpoConfig, ConfigContext } from 'expo/config';
 
-export default ({ config }: ConfigContext): ExpoConfig => {
+export default function ({ config }: ConfigContext): ExpoConfig {
   return {
     name: 'OpenBox Light',
     slug: process.env.EXPO_PUBLIC_APP_SLUG || 'chatwoot-mobile',
@@ -30,7 +30,7 @@ export default ({ config }: ConfigContext): ExpoConfig => {
       entitlements: {
         'aps-environment': 'production',
       },
-      associatedDomains: ['applinks:chat.openboxbrasil.com.br'],
+      associatedDomains: ['applinks:light.openboxbrasil.com.br'],
     },
     android: {
       adaptiveIcon: {
@@ -45,7 +45,8 @@ export default ({ config }: ConfigContext): ExpoConfig => {
         'android.permission.RECORD_AUDIO',
         'android.permission.READ_MEDIA_IMAGES',
       ],
-      googleServicesFile: process.env.EXPO_PUBLIC_ANDROID_GOOGLE_SERVICES_FILE || './google-services.json',
+      googleServicesFile:
+        process.env.EXPO_PUBLIC_ANDROID_GOOGLE_SERVICES_FILE || './google-services.json',
       intentFilters: [
         {
           action: 'VIEW',
@@ -53,7 +54,7 @@ export default ({ config }: ConfigContext): ExpoConfig => {
           data: [
             {
               scheme: 'https',
-              host: 'chat.openboxbrasil.com.br',
+              host: 'light.openboxbrasil.com.br',
               pathPrefix: '/app/accounts/',
               pathPattern: '/*/conversations/*',
             },
@@ -61,11 +62,12 @@ export default ({ config }: ConfigContext): ExpoConfig => {
           category: ['BROWSABLE', 'DEFAULT'],
         },
       ],
-      minSdkVersion: 24, // Confirmado como 24
+      minSdkVersion: 24,
     },
     extra: {
       eas: {
-        projectId: process.env.EXPO_PUBLIC_PROJECT_ID || "8d6b1b2d-8c95-4e55-bf54-f3048bc531cd",
+        projectId:
+          process.env.EXPO_PUBLIC_PROJECT_ID || '8d6b1b2d-8c95-4e55-bf54-f3048bc531cd',
         storybookEnabled: process.env.EXPO_STORYBOOK_ENABLED,
       },
     },
@@ -77,15 +79,6 @@ export default ({ config }: ConfigContext): ExpoConfig => {
           iosPermissions: ['Camera', 'PhotoLibrary', 'MediaLibrary'],
         },
       ],
-    // [
-    //   '@sentry/react-native/expo',
-    //   {
-    //     url: 'https://sentry.io/',
-    //     project: process.env.EXPO_PUBLIC_SENTRY_PROJECT_NAME,
-    //     organization: process.env.EXPO_PUBLIC_SENTRY_ORG_NAME,
-    //   },
-    // ],
-
       '@react-native-firebase/app',
       '@react-native-firebase/messaging',
       [
@@ -94,18 +87,19 @@ export default ({ config }: ConfigContext): ExpoConfig => {
           android: {
             compileSdkVersion: 34,
             targetSdkVersion: 34,
-            minSdkVersion: 24, // <-- adicione aqui dentro!
-            extraMavenRepos: ['$rootDir/../../../node_modules/@notifee/react-native/android/libs'],
+            minSdkVersion: 24,
+            extraMavenRepos: [
+              '$rootDir/../../../node_modules/@notifee/react-native/android/libs',
+            ],
           },
           ios: {
             useFrameworks: 'static',
           },
         },
       ],
-
     ],
     androidNavigationBar: {
       backgroundColor: '#ffffff',
     },
   };
-};
+}
