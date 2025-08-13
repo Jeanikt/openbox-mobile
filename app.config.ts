@@ -16,17 +16,21 @@ export default function ({ config }: ConfigContext): ExpoConfig {
     ios: {
       supportsTablet: true,
       bundleIdentifier: 'com.openboxlight.app',
+      deploymentTarget: '14.0', // Changed to support iOS 14.0 for react-native-keyboard-controller 1.7.0
       infoPlist: {
         NSCameraUsageDescription:
           'This app requires access to the camera to upload images and videos.',
         NSPhotoLibraryUsageDescription:
           'This app requires access to the photo library to upload images.',
-        NSMicrophoneUsageDescription: 'This app requires access to the microphone to record audio.',
+        NSMicrophoneUsageDescription:
+          'This app requires access to the microphone to record audio.',
         NSAppleMusicUsageDescription:
           'This app does not use Apple Music, but a system API may require this permission.',
         UIBackgroundModes: ['fetch', 'remote-notification'],
+        ITSAppUsesNonExemptEncryption: false,
       },
-      googleServicesFile: process.env.EXPO_PUBLIC_IOS_GOOGLE_SERVICES_FILE,
+      googleServicesFile:
+        process.env.EXPO_PUBLIC_IOS_GOOGLE_SERVICES_FILE || './GoogleService-Info.plist',
       entitlements: {
         'aps-environment': 'production',
       },
@@ -94,6 +98,7 @@ export default function ({ config }: ConfigContext): ExpoConfig {
           },
           ios: {
             useFrameworks: 'static',
+            deploymentTarget: '14.0', // Changed to support iOS 14.0
           },
         },
       ],
