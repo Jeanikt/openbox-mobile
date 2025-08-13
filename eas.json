@@ -8,13 +8,13 @@
       "developmentClient": true,
       "distribution": "internal",
       "ios": {
-        "image": "macos-ventura-13.6-xcode-15.2"
+        "image": "macos-sonoma-14-xcode-16"
       }
     },
     "production": {
       "autoIncrement": true,
       "ios": {
-        "image": "macos-ventura-13.6-xcode-15.2"
+        "image": "macos-sonoma-14-xcode-16"
       }
     }
   },
@@ -23,6 +23,10 @@
       "android": {
         "track": "production",
         "releaseStatus": "completed"
+      },
+      "ios": {
+        "appleId": "andre@inovacomm.com.br",
+        "ascAppId": "6749962453"
       }
     }
   }
