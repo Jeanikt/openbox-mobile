@@ -16,7 +16,7 @@ export default function ({ config }: ConfigContext): ExpoConfig {
     ios: {
       supportsTablet: true,
       bundleIdentifier: 'com.openboxlight.app',
-      deploymentTarget: '14.0', // Changed to support iOS 14.0 for react-native-keyboard-controller 1.7.0
+      deploymentTarget: '14.0', // Set to 14.0 for react-native-keyboard-controller 1.7.0
       infoPlist: {
         NSCameraUsageDescription:
           'This app requires access to the camera to upload images and videos.',
@@ -98,7 +98,7 @@ export default function ({ config }: ConfigContext): ExpoConfig {
           },
           ios: {
             useFrameworks: 'static',
-            deploymentTarget: '14.0', // Changed to support iOS 14.0
+            deploymentTarget: '14.0', // Set to 14.0 for compatibility
           },
         },
       ],
