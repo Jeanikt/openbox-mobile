@@ -4,7 +4,7 @@ export default function ({ config }: ConfigContext): ExpoConfig {
   return {
     name: 'OpenBox Light',
     slug: process.env.EXPO_PUBLIC_APP_SLUG || 'chatwoot-mobile',
-    version: '4.0.0',
+    version: '4.0.1',
     orientation: 'portrait',
     icon: './assets/icon.png',
     userInterfaceStyle: 'dark',
@@ -16,7 +16,7 @@ export default function ({ config }: ConfigContext): ExpoConfig {
     ios: {
       supportsTablet: true,
       bundleIdentifier: 'com.openboxlight.app',
-      deploymentTarget: '14.0', // Set to 14.0 for react-native-keyboard-controller 1.7.0
+      deploymentTarget: '14.0',
       infoPlist: {
         NSCameraUsageDescription:
           'This app requires access to the camera to upload images and videos.',
@@ -89,8 +89,8 @@ export default function ({ config }: ConfigContext): ExpoConfig {
         'expo-build-properties',
         {
           android: {
-            compileSdkVersion: 34,
-            targetSdkVersion: 34,
+            compileSdkVersion: 35,
+            targetSdkVersion: 35,
             minSdkVersion: 24,
             extraMavenRepos: [
               '$rootDir/../../../node_modules/@notifee/react-native/android/libs',
@@ -98,7 +98,7 @@ export default function ({ config }: ConfigContext): ExpoConfig {
           },
           ios: {
             useFrameworks: 'static',
-            deploymentTarget: '14.0', // Set to 14.0 for compatibility
+            deploymentTarget: '14.0',
           },
         },
       ],
