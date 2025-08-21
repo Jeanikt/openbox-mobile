@@ -4,7 +4,7 @@ export default function ({ config }: ConfigContext): ExpoConfig {
   return {
     name: 'OpenBox Light',
     slug: process.env.EXPO_PUBLIC_APP_SLUG || 'chatwoot-mobile',
-    version: '4.0.1',
+    version: '4.0.2',
     orientation: 'portrait',
     icon: './assets/icon.png',
     userInterfaceStyle: 'dark',
@@ -16,16 +16,14 @@ export default function ({ config }: ConfigContext): ExpoConfig {
     ios: {
       supportsTablet: true,
       bundleIdentifier: 'com.openboxlight.app',
-      deploymentTarget: '14.0',
+      deploymentTarget: '15.0',
       infoPlist: {
         NSCameraUsageDescription:
-          'This app requires access to the camera to upload images and videos.',
+          'OpenBox Light needs access to your camera so you can take photos of products, documents, or situations directly within the app and instantly share them with customers during conversations.',
         NSPhotoLibraryUsageDescription:
-          'This app requires access to the photo library to upload images.',
+          'OpenBox Light needs access to your photo library so you can select and upload existing photos or documents from your device to include in conversations with customers.',
         NSMicrophoneUsageDescription:
-          'This app requires access to the microphone to record audio.',
-        NSAppleMusicUsageDescription:
-          'This app does not use Apple Music, but a system API may require this permission.',
+          'OpenBox Light needs access to your microphone so you can record clear and personalized voice messages that can be sent directly to customers during conversations.',
         UIBackgroundModes: ['fetch', 'remote-notification'],
         ITSAppUsesNonExemptEncryption: false,
       },
@@ -36,6 +34,7 @@ export default function ({ config }: ConfigContext): ExpoConfig {
       },
       associatedDomains: ['applinks:light.openboxbrasil.com.br'],
     },
+
     android: {
       adaptiveIcon: {
         foregroundImage: './assets/adaptive-icon.png',
@@ -98,7 +97,7 @@ export default function ({ config }: ConfigContext): ExpoConfig {
           },
           ios: {
             useFrameworks: 'static',
-            deploymentTarget: '14.0',
+            deploymentTarget: '15.0',
           },
         },
       ],

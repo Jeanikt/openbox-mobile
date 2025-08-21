@@ -8,7 +8,7 @@
       "developmentClient": true,
       "distribution": "internal",
       "ios": {
-        "image": "macos-ventura-13.6-xcode-15.2"
+        "image": "macos-sequoia-15.3-xcode-16.2"
       }
     },
     "production": {
